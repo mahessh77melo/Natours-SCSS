@@ -94,6 +94,11 @@ body{
   @include respond(tab-land){
     padding:0;
   }
+
+}
+::selection{
+  background-color: lighten($lt-blue-green,10%);
+
 }
 
 header{
@@ -548,6 +553,7 @@ a{
     overflow: hidden;
     top: 0;
     left: 0;
+    -webkit-backface-visibility:hidden;
     backface-visibility: hidden;
     border-radius: 5px;
     box-shadow: 0 1.5rem 4rem rgba($black-col,0.6);
@@ -1154,6 +1160,8 @@ a{
   visibility: hidden;
   transition: opacity .5s;
   transition: filter .7s;
+  backdrop-filter:blur(10px) saturate(1.2);
+  -webkit-backdrop-filter:blur(10px);
   &:target{
     filter: none;
     opacity:1;
